@@ -1,0 +1,19 @@
+{
+    "id":"39cbd6d5-4da5-4d94-ae71-84895c5e552a",
+    "name":"A new case created from tests",
+    "status":"open",
+    "external_id":null,
+    "template_id":null,
+    "flags":[],
+    "tags":[],
+    "risk":{
+        "level":"not_defined"
+    },
+    "custom_properties":{
+        "a_custom_property":null
+    },
+    "metadata":null,
+    "created_at":"2023-12-26T14:08:48.173Z",
+    "updated_at":"2023-12-26T14:08:48.173Z",
+    "last_activity_at":"2023-12-26T14:08:48.173Z"
+}
