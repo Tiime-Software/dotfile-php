@@ -1,0 +1,27 @@
+{
+    "name": "dotfile/dotfile-client",
+    "type": "library",
+    "description": "A PHP Client SDK for dotfile API.",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "config": {
+        "sort-packages": true
+    },
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Dotfile\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dotfile\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "symfony/http-client": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    }
+}
