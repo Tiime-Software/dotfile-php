@@ -1,0 +1,27 @@
+{
+    "id": "20fda6f2-4b14-44fa-ab5d-0381fff94bbb",
+    "case_id": "39cbd6d5-4da5-4d94-ae71-84895c5e552a",
+    "name": "A new company created from tests",
+    "commercial_name": null,
+    "registration_number": "02513194000022",
+    "registration_date": null,
+    "status": "not_reported",
+    "legal_form": null,
+    "country": "FR",
+    "address": {},
+    "classifications": null,
+    "banking_information": {
+        "iban": null,
+        "bic": null
+    },
+    "share_capital": null,
+    "tax_identification_number": null,
+    "website_url": null,
+    "employer_identification_number": null,
+    "custom_properties": {
+        "a_custom_property":null
+    },
+    "created_at": "2023-12-26T15:40:30.316Z",
+    "updated_at": "2023-12-26T15:40:30.316Z",
+    "last_activity_at": "2023-12-26T15:40:30.316Z"
+}

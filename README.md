@@ -37,8 +37,6 @@ You can now use your client!
 
 <summary>Create a new case</summary>
 
-See [dotfile documentation](https://docs.dotfile.com/reference/case-create-one).
-
 ```php
 use Dotfile\Model\Case\CaseCreated;
 use Dotfile\Model\Case\CaseCreateInput;
@@ -51,5 +49,32 @@ $caseCreated = $client->case->create($input); // Returns an instance of CaseCrea
 echo $caseCreated->name; // Display "This is a new case."
 ```
 
+See [dotfile documentation](https://docs.dotfile.com/reference/case-create-one).
+
 </details>
 
+
+### Company
+
+<details>
+
+<summary>Create a new company in a case</summary>
+
+```php
+use Dotfile\Model\Company\Company;
+use Dotfile\Model\Company\CompanyCreateInput;
+
+$input = new CompanyCreateInput();
+$input->caseId = 'id-of-the-case';
+$input->name = 'This is a new company.';
+$input->registrationNumber = '02513194000022';
+$input->country = 'FR';
+
+$company = $client->company->create($input); // Returns an instance of Company
+
+echo $company->name; // Display "This is a new company."
+```
+
+See [dotfile documentation](https://docs.dotfile.com/reference/company-create-one).
+
+</details>

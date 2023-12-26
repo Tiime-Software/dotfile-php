@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Dotfile;
 
 use Dotfile\Service\CaseService;
+use Dotfile\Service\CompanyService;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;
 use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
@@ -21,6 +22,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 class DotfileClient
 {
     public readonly CaseService $case;
+    public readonly CompanyService $company;
 
     public function __construct(
         HttpClientInterface $httpClient,
@@ -37,6 +39,7 @@ class DotfileClient
         $serializer = new Serializer($normalizer, $encoder);
 
         $this->case = new CaseService($httpClient, $serializer);
+        $this->company = new CompanyService($httpClient, $serializer);
     }
 
     public static function createFromApiKey(string $apiKey): self
