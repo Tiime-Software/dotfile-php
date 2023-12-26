@@ -1,5 +1,5 @@
 {
-    "name": "dotfile/dotfile-client",
+    "name": "odolbeau/dotfile-php",
     "type": "library",
     "description": "A PHP Client SDK for dotfile API.",
     "license": "MIT",
