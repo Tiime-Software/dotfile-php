@@ -55,6 +55,7 @@ class CompanyCreateTest extends TestCase
         $this->assertNull($company->websiteUrl);
         $this->assertNull($company->employerIdentificationNumber);
         $this->assertSame(['a_custom_property' => null], $company->customProperties);
+        $this->assertSame([], $company->checks);
         $this->assertInstanceOf(\DateTimeImmutable::class, $company->createdAt);
         $this->assertInstanceOf(\DateTimeImmutable::class, $company->updatedAt);
         $this->assertInstanceOf(\DateTimeImmutable::class, $company->lastActivityAt);

@@ -63,7 +63,7 @@ class Company
     /**
      * @var Check[]
      */
-    public array $checks;
+    public array $checks = [];
 
     public \DateTimeImmutable $createdAt;
     public \DateTimeImmutable $updatedAt;
