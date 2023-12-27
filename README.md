@@ -53,7 +53,6 @@ See [dotfile documentation](https://docs.dotfile.com/reference/case-create-one).
 
 </details>
 
-
 ### Company
 
 <details>
@@ -76,5 +75,31 @@ echo $company->name; // Display "This is a new company."
 ```
 
 See [dotfile documentation](https://docs.dotfile.com/reference/company-create-one).
+
+</details>
+
+### Individual
+
+<details>
+
+<summary>Create a new individual in a case</summary>
+
+```php
+use Dotfile\Model\Individual\Individual;
+use Dotfile\Model\Individual\IndividualCreateInput;
+
+$input = new IndividualCreateInput();
+$input->caseId = 'id-of-the-case';
+$input->roles = [Role::Shareholder];
+$input->firstName = 'Rosa';
+$input->lastName = 'Parks';
+
+$individual = $client->individual->create($input); // Returns an instance of Individual
+
+echo $individual->firstName; // Display "Rosa"
+echo $individual->lastName; // Display "Parks"
+```
+
+See [dotfile documentation](https://docs.dotfile.com/reference/individual-create-one).
 
 </details>
