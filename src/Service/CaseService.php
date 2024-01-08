@@ -4,11 +4,14 @@ declare(strict_types=1);
 
 namespace Dotfile\Service;
 
+use Dotfile\Exception\DotfileApiException;
 use Dotfile\Model\Case\CaseCreated;
 use Dotfile\Model\Case\CaseCreateInput;
+use Dotfile\Model\Case\CaseTags;
 use Dotfile\Model\Case\RiskLevel;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
+use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 
 class CaseService extends AbstractService
 {
@@ -32,5 +35,25 @@ class CaseService extends AbstractService
         }
 
         return $caseCreated;
+    }
+
+    /**
+     * @param array<string> $tags
+     *
+     * @throws DotfileApiException
+     * @throws TransportExceptionInterface
+     */
+    public function addTags(string $caseId, array $tags): CaseTags
+    {
+        $body = $this->serializer->serialize([$caseId, $tags], 'json', [AbstractObjectNormalizer::SKIP_NULL_VALUES => true]);
+
+        $response = $this->client->request(Request::METHOD_POST, 'cases/'.$caseId.'/tags', [
+            'headers' => [
+                'Content-Type' => 'application/json',
+            ],
+            'body' => $body,
+        ]);
+
+        return $this->serializer->deserialize($this->getContent($response), CaseTags::class, 'json');
     }
 }
