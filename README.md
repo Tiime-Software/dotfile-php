@@ -57,7 +57,7 @@ See [dotfile documentation](https://docs.dotfile.com/reference/case-create-one).
 <summary>Add tags in an existing case</summary>
 
 ```php
-use Dotfile\Model\Case\Tag;
+use Dotfile\Model\Case\CaseTags;
 
 $caseId = '39cbd6d5-4da5-4d94-ae71-84895c5e552a';
 $tags = ['A faire'];
