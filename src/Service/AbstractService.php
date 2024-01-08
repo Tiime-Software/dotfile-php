@@ -16,7 +16,8 @@ abstract class AbstractService
     public function __construct(
         protected HttpClientInterface $client,
         protected SerializerInterface $serializer,
-    ) {}
+    ) {
+    }
 
     /**
      * @throws DotfileApiException
