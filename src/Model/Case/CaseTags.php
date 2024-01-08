@@ -9,9 +9,10 @@ namespace Dotfile\Model\Case;
  *
  * @see https://docs.dotfile.com/reference/case-tag-create-case-tags
  */
-class Tag
+class CaseTags
 {
-    public string $id;
-
-    public string $label;
+    /**
+     * @var Tag[]
+     */
+    public array $tags;
 }
