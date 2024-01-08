@@ -50,7 +50,23 @@ echo $caseCreated->name; // Display "This is a new case."
 ```
 
 See [dotfile documentation](https://docs.dotfile.com/reference/case-create-one).
+</details>
 
+<details>
+
+<summary>Add tags in an existing case</summary>
+
+```php
+use Dotfile\Model\Case\Tag;
+
+$caseId = '39cbd6d5-4da5-4d94-ae71-84895c5e552a';
+$tags = ['A faire'];
+
+$caseAddTags = $client->case->addTags($caseId, $tags); // Returns an instance of Tag
+
+echo $caseAddTags->tags[0]['label']; // Display "A faire"
+```
+See [dotfile documentation](https://docs.dotfile.com/reference/case-tag-create-case-tags)
 </details>
 
 ### Company
@@ -103,3 +119,11 @@ echo $individual->lastName; // Display "Parks"
 See [dotfile documentation](https://docs.dotfile.com/reference/individual-create-one).
 
 </details>
+
+### Tests
+
+To launch all the tests:
+
+```php
+make test
+```
