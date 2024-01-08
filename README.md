@@ -62,9 +62,9 @@ use Dotfile\Model\Case\Tag;
 $caseId = '39cbd6d5-4da5-4d94-ae71-84895c5e552a';
 $tags = ['A faire'];
 
-$caseAddTags = $client->case->addTags($caseId, $tags); // Returns an instance of Tag
+$caseTags = $client->case->addTags($caseId, $tags); // Returns an instance of CaseTags
 
-echo $caseAddTags->tags[0]['label']; // Display "A faire"
+echo $caseTags->tags[0]->label'; // Display "A faire"
 ```
 See [dotfile documentation](https://docs.dotfile.com/reference/case-tag-create-case-tags)
 </details>
