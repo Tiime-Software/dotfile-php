@@ -54,6 +54,27 @@ See [dotfile documentation](https://docs.dotfile.com/reference/case-create-one).
 
 <details>
 
+<summary>Update a case</summary>
+
+```php
+use Dotfile\Model\Case\CaseUpdated;
+use Dotfile\Model\Case\CaseUpdateInput;
+
+$input = new CaseUpdateInput();
+$input->name = 'This is an update for the case.';
+
+$caseId = '39cbd6d5-4da5-4d94-ae71-84895c5e552a';
+
+$caseUpdated = $client->case->update($caseId, $input); // Returns an instance of CaseUpdated
+
+echo $caseUpdated->name; // Display "This is an update for the case."
+```
+
+See [dotfile documentation](https://docs.dotfile.com/reference/case-update-one).
+</details>
+
+<details>
+
 <summary>Get tags in an existing case</summary>
 
 ```php

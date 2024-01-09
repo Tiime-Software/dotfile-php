@@ -8,6 +8,8 @@ use Dotfile\Exception\DotfileApiException;
 use Dotfile\Model\Case\CaseCreated;
 use Dotfile\Model\Case\CaseCreateInput;
 use Dotfile\Model\Case\CaseTags;
+use Dotfile\Model\Case\CaseUpdated;
+use Dotfile\Model\Case\CaseUpdateInput;
 use Dotfile\Model\Case\RiskLevel;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
@@ -35,6 +37,28 @@ class CaseService extends AbstractService
         }
 
         return $caseCreated;
+    }
+
+    public function update(string $caseId, CaseUpdateInput $input): CaseUpdated
+    {
+        $body = $this->serializer->serialize($input, 'json', [AbstractObjectNormalizer::SKIP_NULL_VALUES => true]);
+
+        $response = $this->client->request(Request::METHOD_PATCH, 'cases/'.$caseId, [
+            'headers' => [
+                'Content-Type' => 'application/json',
+            ],
+            'body' => $body,
+        ]);
+
+        $caseUpdated = $this->serializer->deserialize($this->getContent($response), CaseUpdated::class, 'json');
+
+        if (null !== $caseUpdated->risk) {
+            if (RiskLevel::NotDefined === $caseUpdated->risk->level) {
+                $caseUpdated->risk = null;
+            }
+        }
+
+        return $caseUpdated;
     }
 
     public function getTags(string $caseId): CaseTags
