@@ -39,7 +39,7 @@ class CaseService extends AbstractService
 
     public function getTags(string $caseId): CaseTags
     {
-        $response = $this->client->request(Request::METHOD_DELETE, 'cases/'.$caseId.'/tags', [
+        $response = $this->client->request(Request::METHOD_GET, 'cases/'.$caseId.'/tags', [
             'headers' => [
                 'Content-Type' => 'application/json',
             ],
