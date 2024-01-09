@@ -13,10 +13,10 @@ use Symfony\Component\HttpClient\Response\MockResponse;
 
 class CaseRemoveTagsTest extends TestCase
 {
-    public function testCaseRemoveTagWithMinimumValidData1(): void
+    public function testCaseRemoveAllTags(): void
     {
         $client = new DotfileClient(new MockHttpClient([
-            new MockResponse((string) file_get_contents(__DIR__.'/../fixtures/case_remove_tags_with_minimal_data_response_1.json')),
+            new MockResponse((string) file_get_contents(__DIR__.'/../fixtures/case_remove_tags_by_removing_all_tags.json')),
         ]));
 
         $caseTags = $client->case->removeTags('39cbd6d5-4da5-4d94-ae71-84895c5e552a', ['A faire']);
@@ -25,10 +25,10 @@ class CaseRemoveTagsTest extends TestCase
         $this->assertCount(0, $caseTags->tags);
     }
 
-    public function testCaseRemoveTagWithMinimumValidData2(): void
+    public function testCaseRemoveOneTag(): void
     {
         $client = new DotfileClient(new MockHttpClient([
-            new MockResponse((string) file_get_contents(__DIR__.'/../fixtures/case_remove_tags_with_minimal_data_response_2.json')),
+            new MockResponse((string) file_get_contents(__DIR__.'/../fixtures/case_remove_tags_by_removing_one_tag.json')),
         ]));
 
         $caseTags = $client->case->removeTags('39cbd6d5-4da5-4d94-ae71-84895c5e552a', ['Demander confirmation']);
