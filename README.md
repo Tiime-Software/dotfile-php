@@ -54,6 +54,23 @@ See [dotfile documentation](https://docs.dotfile.com/reference/case-create-one).
 
 <details>
 
+<summary>Get tags in an existing case</summary>
+
+```php
+use Dotfile\Model\Case\CaseTags;
+
+$caseId = '39cbd6d5-4da5-4d94-ae71-84895c5e552a';
+
+$caseTags = $client->case->getTags($caseId); // Returns an instance of CaseTags
+
+echo count($caseTags); // Display 0 if there is no tag
+echo $caseTags->tags[0]->label; // Display label of the first tag if there is at least one
+```
+See [dotfile documentation](https://docs.dotfile.com/reference/case-tag-get-case-tags)
+</details>
+
+<details>
+
 <summary>Add tags in an existing case</summary>
 
 ```php
