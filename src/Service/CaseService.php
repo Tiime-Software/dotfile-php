@@ -56,4 +56,24 @@ class CaseService extends AbstractService
 
         return $this->serializer->deserialize($this->getContent($response), CaseTags::class, 'json');
     }
+
+    /**
+     * @param array<string> $tags
+     *
+     * @throws DotfileApiException
+     * @throws TransportExceptionInterface
+     */
+    public function removeTags(string $caseId, array $tags): CaseTags
+    {
+        $body = $this->serializer->serialize(['tags' => $tags], 'json', [AbstractObjectNormalizer::SKIP_NULL_VALUES => true]);
+
+        $response = $this->client->request(Request::METHOD_DELETE, 'cases/'.$caseId.'/tags', [
+            'headers' => [
+                'Content-Type' => 'application/json',
+            ],
+            'body' => $body,
+        ]);
+
+        return $this->serializer->deserialize($this->getContent($response), CaseTags::class, 'json');
+    }
 }
