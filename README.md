@@ -69,6 +69,24 @@ echo $caseTags->tags[0]->label'; // Display "A faire"
 See [dotfile documentation](https://docs.dotfile.com/reference/case-tag-create-case-tags)
 </details>
 
+<details>
+
+<summary>Remove tags in an existing case</summary>
+
+```php
+use Dotfile\Model\Case\CaseTags;
+
+$caseId = '39cbd6d5-4da5-4d94-ae71-84895c5e552a';
+$tags = ['A faire'];
+
+$caseTags = $client->case->removeTags($caseId, $tags); // Returns an instance of CaseTags
+
+echo count($caseTags); // Display 0 if there was one tag
+echo $caseTags->tags[0]->label; // Display one remaining tag's label if there was more than one
+```
+See [dotfile documentation](https://docs.dotfile.com/reference/case-tag-delete-case-tags)
+</details>
+
 ### Company
 
 <details>
