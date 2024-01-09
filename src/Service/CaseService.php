@@ -45,7 +45,7 @@ class CaseService extends AbstractService
      */
     public function addTags(string $caseId, array $tags): CaseTags
     {
-        $body = $this->serializer->serialize([$caseId, $tags], 'json', [AbstractObjectNormalizer::SKIP_NULL_VALUES => true]);
+        $body = $this->serializer->serialize(['tags' => $tags], 'json', [AbstractObjectNormalizer::SKIP_NULL_VALUES => true]);
 
         $response = $this->client->request(Request::METHOD_POST, 'cases/'.$caseId.'/tags', [
             'headers' => [
