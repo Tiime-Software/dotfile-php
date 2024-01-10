@@ -16,7 +16,7 @@ use Symfony\Component\HttpClient\Response\MockResponse;
 
 class CaseGetTest extends TestCase
 {
-    public function testCaseUpdateWithMinimumValidData(): void
+    public function testCaseGet(): void
     {
         $client = new DotfileClient(new MockHttpClient([
             new MockResponse((string) file_get_contents(__DIR__.'/../fixtures/case_get_with_minimal_data_response.json')),
