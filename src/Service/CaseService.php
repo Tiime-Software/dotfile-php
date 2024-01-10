@@ -7,6 +7,7 @@ namespace Dotfile\Service;
 use Dotfile\Exception\DotfileApiException;
 use Dotfile\Model\Case\CaseCreated;
 use Dotfile\Model\Case\CaseCreateInput;
+use Dotfile\Model\Case\CaseDetailed;
 use Dotfile\Model\Case\CaseTags;
 use Dotfile\Model\Case\CaseUpdated;
 use Dotfile\Model\Case\CaseUpdateInput;
@@ -59,6 +60,25 @@ class CaseService extends AbstractService
         }
 
         return $caseUpdated;
+    }
+
+    public function get(string $caseId): CaseDetailed
+    {
+        $response = $this->client->request(Request::METHOD_GET, 'cases/'.$caseId, [
+            'headers' => [
+                'Content-Type' => 'application/json',
+            ],
+        ]);
+
+        $caseDetailed = $this->serializer->deserialize($this->getContent($response), CaseDetailed::class, 'json');
+
+        if (null !== $caseDetailed->risk) {
+            if (RiskLevel::NotDefined === $caseDetailed->risk->level) {
+                $caseDetailed->risk = null;
+            }
+        }
+
+        return $caseDetailed;
     }
 
     public function getTags(string $caseId): CaseTags
