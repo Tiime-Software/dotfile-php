@@ -92,6 +92,19 @@ See [dotfile documentation](https://docs.dotfile.com/reference/case-update-one).
 
 <details>
 
+<summary>Delete a case</summary>
+
+```php
+$caseId = '39cbd6d5-4da5-4d94-ae71-84895c5e552a';
+
+$client->case->delete($caseId);
+```
+
+See [dotfile documentation](https://docs.dotfile.com/reference/case-delete-one).
+</details>
+
+<details>
+
 <summary>Get tags in an existing case</summary>
 
 ```php
