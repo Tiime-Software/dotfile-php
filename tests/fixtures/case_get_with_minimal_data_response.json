@@ -1,0 +1,143 @@
+{
+    "id": "946a9af4-67ff-44e6-a0dc-a73e022365ff",
+    "name": "A case created from tests",
+    "status": "open",
+    "external_id": "06042010",
+    "template_id": "78bb7107-afd9-4681-9093-42ead2c14f68",
+    "flags": [
+        "for_first_collect"
+    ],
+    "tags": [
+        "A faire"
+    ],
+    "risk": {
+        "level": "not_defined"
+    },
+    "custom_properties": {
+        "a_custom_property":null
+    },
+    "metadata": {
+        "metadata_key1": "metadata_value1"
+    },
+    "last_activity_at": "2024-01-09T15:59:34.921Z",
+    "individuals": [
+        {
+            "id": "fae4446d-915f-4417-9412-895f07edf37d",
+            "case_id": "946a9af4-67ff-44e6-a0dc-a73e022365ff",
+            "roles": [
+                "legal_representative"
+            ],
+            "first_name": "IndividualFirstName",
+            "middle_name": null,
+            "last_name": "IndividualLastName",
+            "maiden_name": null,
+            "email": null,
+            "birth_date": null,
+            "birth_country": null,
+            "birth_place": null,
+            "address": {},
+            "banking_information": {
+                "iban": null,
+                "bic": null
+            },
+            "tax_identification_number": null,
+            "social_security_number": null,
+            "phone_number": null,
+            "position": null,
+            "ownership_percentage": null,
+            "custom_properties": {},
+            "checks": [
+                {
+                    "id": "276adba3-379c-4cba-88fe-51b9ed8bcf72",
+                    "individual_id": "fae4446d-915f-4417-9412-895f07edf37d",
+                    "company_id": null,
+                    "status": "in_progress",
+                    "type": "id_document",
+                    "subtype": null,
+                    "created_at": "2024-01-09T15:59:34.446Z",
+                    "updated_at": "2024-01-09T15:59:34.482Z",
+                    "last_activity_at": "2024-01-09T15:59:34.478Z"
+                },
+                {
+                    "id": "464c4f7a-671f-4898-973e-50838c60bae7",
+                    "individual_id": "fae4446d-915f-4417-9412-895f07edf37d",
+                    "company_id": null,
+                    "status": "in_progress",
+                    "type": "document",
+                    "subtype": "document_type:proof_of_address",
+                    "created_at": "2024-01-09T15:59:34.647Z",
+                    "updated_at": "2024-01-09T15:59:34.716Z",
+                    "last_activity_at": "2024-01-09T15:59:34.687Z"
+                },
+                {
+                    "id": "b1b115ca-8c3e-4f5d-8cd7-3e617072b588",
+                    "individual_id": "fae4446d-915f-4417-9412-895f07edf37d",
+                    "company_id": null,
+                    "status": "in_progress",
+                    "type": "document",
+                    "subtype": "document_type:id_document",
+                    "created_at": "2024-01-09T15:59:34.539Z",
+                    "updated_at": "2024-01-09T15:59:34.571Z",
+                    "last_activity_at": "2024-01-09T15:59:34.566Z"
+                }
+            ],
+            "created_at": "2024-01-09T15:59:34.009Z",
+            "updated_at": "2024-01-09T15:59:34.716Z",
+            "last_activity_at": "2024-01-09T15:59:34.687Z"
+        }
+    ],
+    "companies": [
+        {
+            "id": "a5569aaa-fd71-494c-895c-c374a4470a86",
+            "case_id": "946a9af4-67ff-44e6-a0dc-a73e022365ff",
+            "name": "CompanyA",
+            "commercial_name": null,
+            "registration_number": "070490",
+            "registration_date": "2024-01-11",
+            "status": "live",
+            "legal_form": null,
+            "country": "FR",
+            "address": {},
+            "classifications": null,
+            "banking_information": {
+                "iban": null,
+                "bic": null
+            },
+            "share_capital": null,
+            "tax_identification_number": null,
+            "website_url": null,
+            "employer_identification_number": null,
+            "custom_properties": {},
+            "document_orders": [],
+            "checks": [
+                {
+                    "id": "21b31de6-bf3a-43b6-bf00-cbe038bc04b0",
+                    "individual_id": null,
+                    "company_id": "a5569aaa-fd71-494c-895c-c374a4470a86",
+                    "status": "in_progress",
+                    "type": "document",
+                    "subtype": "document_type:articles_of_association",
+                    "created_at": "2024-01-09T15:59:34.200Z",
+                    "updated_at": "2024-01-09T15:59:34.232Z",
+                    "last_activity_at": "2024-01-09T15:59:34.229Z"
+                },
+                {
+                    "id": "f2bdfa54-7db8-4138-9921-556e71f6587f",
+                    "individual_id": null,
+                    "company_id": "a5569aaa-fd71-494c-895c-c374a4470a86",
+                    "status": "in_progress",
+                    "type": "document",
+                    "subtype": "document_type:registration_certificate",
+                    "created_at": "2024-01-09T15:59:34.314Z",
+                    "updated_at": "2024-01-09T15:59:34.349Z",
+                    "last_activity_at": "2024-01-09T15:59:34.345Z"
+                }
+            ],
+            "created_at": "2024-01-09T15:59:34.009Z",
+            "updated_at": "2024-01-09T15:59:34.349Z",
+            "last_activity_at": "2024-01-09T15:59:34.345Z"
+        }
+    ],
+    "created_at": "2023-12-27T09:39:49.256Z",
+    "updated_at": "2024-01-09T15:59:34.924Z"
+}

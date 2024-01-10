@@ -54,6 +54,23 @@ See [dotfile documentation](https://docs.dotfile.com/reference/case-create-one).
 
 <details>
 
+<summary>Get a case</summary>
+
+```php
+use Dotfile\Model\Case\CaseDetailed;
+
+$caseId = '39cbd6d5-4da5-4d94-ae71-84895c5e552a';
+
+$caseDetailed = $client->case->get($caseId); // Returns an instance of CaseDetailed
+
+echo $caseDetailed->name; // Display "This is the name of the case you retrieved."
+```
+
+See [dotfile documentation](https://docs.dotfile.com/reference/case-get-one).
+</details>
+
+<details>
+
 <summary>Update a case</summary>
 
 ```php
