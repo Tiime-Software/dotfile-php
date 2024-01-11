@@ -46,7 +46,7 @@ $input->name = 'This is a new case.';
 
 $caseCreated = $client->case->create($input); // Returns an instance of CaseCreated
 
-echo $caseCreated->name; // Display "This is a new case."
+echo $caseCreated->name; // Displays "This is a new case."
 ```
 
 See [dotfile documentation](https://docs.dotfile.com/reference/case-create-one).
@@ -63,7 +63,7 @@ $caseId = '39cbd6d5-4da5-4d94-ae71-84895c5e552a';
 
 $caseDetailed = $client->case->get($caseId); // Returns an instance of CaseDetailed
 
-echo $caseDetailed->name; // Display "This is the name of the case you retrieved."
+echo $caseDetailed->name; // Displays "This is the name of the case you retrieved."
 ```
 
 See [dotfile documentation](https://docs.dotfile.com/reference/case-get-one).
@@ -84,7 +84,7 @@ $caseId = '39cbd6d5-4da5-4d94-ae71-84895c5e552a';
 
 $caseUpdated = $client->case->update($caseId, $input); // Returns an instance of CaseUpdated
 
-echo $caseUpdated->name; // Display "This is an update for the case."
+echo $caseUpdated->name; // Displays "This is an update for the case."
 ```
 
 See [dotfile documentation](https://docs.dotfile.com/reference/case-update-one).
@@ -105,6 +105,24 @@ See [dotfile documentation](https://docs.dotfile.com/reference/case-delete-one).
 
 <details>
 
+<summary>Get all cases</summary>
+
+```php
+use Dotfile\Model\Case\CaseAllInput;
+
+$caseAllInput = new CaseAllInput();
+$caseAllInput->name = 'I search the case with this name';
+
+$caseList = $client->case->getAll($caseAllInput); // Returns an instance of CaseList
+
+echo count($caseList->data); // Displays the number of items that matched the search
+echo $caseList->data[0]->name; // Displays name of the first case if there is at least one
+```
+See [dotfile documentation](https://docs.dotfile.com/reference/case-get-many)
+</details>
+
+<details>
+
 <summary>Get tags in an existing case</summary>
 
 ```php
@@ -114,8 +132,8 @@ $caseId = '39cbd6d5-4da5-4d94-ae71-84895c5e552a';
 
 $caseTags = $client->case->getTags($caseId); // Returns an instance of CaseTags
 
-echo count($caseTags); // Display 0 if there is no tag
-echo $caseTags->tags[0]->label; // Display label of the first tag if there is at least one
+echo count($caseTags); // Displays 0 if there is no tag
+echo $caseTags->tags[0]->label; // Displays label of the first tag if there is at least one
 ```
 See [dotfile documentation](https://docs.dotfile.com/reference/case-tag-get-case-tags)
 </details>
@@ -132,7 +150,7 @@ $tags = ['A faire'];
 
 $caseTags = $client->case->addTags($caseId, $tags); // Returns an instance of CaseTags
 
-echo $caseTags->tags[0]->label'; // Display "A faire"
+echo $caseTags->tags[0]->label; // Displays "A faire"
 ```
 See [dotfile documentation](https://docs.dotfile.com/reference/case-tag-create-case-tags)
 </details>
@@ -149,8 +167,8 @@ $tags = ['A faire'];
 
 $caseTags = $client->case->removeTags($caseId, $tags); // Returns an instance of CaseTags
 
-echo count($caseTags); // Display 0 if there was one tag
-echo $caseTags->tags[0]->label; // Display one remaining tag's label if there was more than one
+echo count($caseTags); // Displays 0 if there was one tag
+echo $caseTags->tags[0]->label; // Displays one remaining tag's label if there was more than one
 ```
 See [dotfile documentation](https://docs.dotfile.com/reference/case-tag-delete-case-tags)
 </details>
@@ -173,7 +191,7 @@ $input->country = 'FR';
 
 $company = $client->company->create($input); // Returns an instance of Company
 
-echo $company->name; // Display "This is a new company."
+echo $company->name; // Displays "This is a new company."
 ```
 
 See [dotfile documentation](https://docs.dotfile.com/reference/company-create-one).
@@ -198,8 +216,8 @@ $input->lastName = 'Parks';
 
 $individual = $client->individual->create($input); // Returns an instance of Individual
 
-echo $individual->firstName; // Display "Rosa"
-echo $individual->lastName; // Display "Parks"
+echo $individual->firstName; // Displays "Rosa"
+echo $individual->lastName; // Displays "Parks"
 ```
 
 See [dotfile documentation](https://docs.dotfile.com/reference/individual-create-one).
