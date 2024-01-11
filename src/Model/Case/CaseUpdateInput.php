@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Dotfile\Model\Case;
 
 /**
- * Input used to create a case.
+ * Input used to update a case.
  *
- * @see https://docs.dotfile.com/reference/case-create-one
+ * @see https://docs.dotfile.com/reference/case-update-one
  */
 class CaseUpdateInput
 {
