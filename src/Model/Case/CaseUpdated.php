@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Dotfile\Model\Case;
 
 /**
- * Response when a case have been created.
+ * Response when a case have been updated.
  *
- * @see https://docs.dotfile.com/reference/case-create-one
+ * @see https://docs.dotfile.com/reference/case-update-one
  */
 class CaseUpdated
 {
