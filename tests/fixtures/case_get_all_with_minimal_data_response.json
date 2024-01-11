@@ -1,0 +1,64 @@
+{
+    "data": [
+        {
+            "id": "ce9f7a42-e884-4d92-9b18-559ee7326f19",
+            "name": "Example 1",
+            "status": "open",
+            "external_id": "3",
+            "template_id": "78bb7107-afd9-4681-9093-42ead2c14f68",
+            "risk": {
+                "level": "not_defined"
+            },
+            "metadata": null,
+            "flags": [
+                "for_first_collect"
+            ],
+            "tags": [],
+            "created_at": "2023-12-27T09:40:45.550Z",
+            "updated_at": "2023-12-27T09:40:49.085Z",
+            "last_activity_at": "2023-12-27T09:40:49.081Z"
+        },
+        {
+            "id": "9fbec4ec-d4c9-4c0f-87be-2329e24445e3",
+            "name": "Example 2",
+            "status": "open",
+            "external_id": "1",
+            "template_id": "78bb7107-afd9-4681-9093-42ead2c14f68",
+            "risk": {
+                "level": "not_defined"
+            },
+            "metadata": null,
+            "flags": [
+                "for_first_collect"
+            ],
+            "tags": [],
+            "created_at": "2023-12-27T09:39:15.096Z",
+            "updated_at": "2024-01-05T14:52:45.238Z",
+            "last_activity_at": "2024-01-05T14:52:45.230Z"
+        },
+        {
+            "id": "39cbd6d5-4da5-4d94-ae71-84895c5e552a",
+            "name": "Example 3",
+            "status": "open",
+            "external_id": null,
+            "template_id": null,
+            "risk": {
+                "level": "not_defined"
+            },
+            "metadata": null,
+            "flags": [],
+            "tags": [
+                "Validé",
+                "Contacter le client"
+            ],
+            "created_at": "2023-12-26T14:08:48.173Z",
+            "updated_at": "2024-01-08T12:26:27.196Z",
+            "last_activity_at": "2024-01-08T12:26:27.194Z"
+        }
+    ],
+    "pagination": {
+        "page": 1,
+        "limit": 20,
+        "count": 3
+    }
+}

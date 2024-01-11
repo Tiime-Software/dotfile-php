@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace Dotfile\Service;
 
 use Dotfile\Exception\DotfileApiException;
+use Dotfile\Model\Case\CaseAllInput;
 use Dotfile\Model\Case\CaseCreated;
 use Dotfile\Model\Case\CaseCreateInput;
 use Dotfile\Model\Case\CaseDetailed;
+use Dotfile\Model\Case\CaseList;
 use Dotfile\Model\Case\CaseTags;
 use Dotfile\Model\Case\CaseUpdated;
 use Dotfile\Model\Case\CaseUpdateInput;
@@ -18,6 +20,27 @@ use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 
 class CaseService extends AbstractService
 {
+    public function getAll(CaseAllInput $input): CaseList
+    {
+        $response = $this->client->request(Request::METHOD_GET, 'cases/'.$input->convertToQueryString(), [
+            'headers' => [
+                'Content-Type' => 'application/json',
+            ],
+        ]);
+
+        $caseList = $this->serializer->deserialize($this->getContent($response), CaseList::class, 'json');
+
+        foreach ($caseList->data as $case) {
+            if (null !== $case->risk) {
+                if (RiskLevel::NotDefined === $case->risk->level) {
+                    $case->risk = null;
+                }
+            }
+        }
+
+        return $caseList;
+    }
+
     public function create(CaseCreateInput $input): CaseCreated
     {
         $body = $this->serializer->serialize($input, 'json', [AbstractObjectNormalizer::SKIP_NULL_VALUES => true]);
