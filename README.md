@@ -35,6 +35,24 @@ You can now use your client!
 
 <details>
 
+<summary>Get all cases</summary>
+
+```php
+use Dotfile\Model\Case\CaseAllInput;
+
+$caseAllInput = new CaseAllInput();
+$caseAllInput->name = 'I search the case with this name';
+
+$caseList = $client->case->getAll($caseAllInput); // Returns an instance of CaseList
+
+echo count($caseList->data); // Displays the number of items that matched the search
+echo $caseList->data[0]->name; // Displays name of the first case if there is at least one
+```
+See [dotfile documentation](https://docs.dotfile.com/reference/case-get-many)
+</details>
+
+<details>
+
 <summary>Create a new case</summary>
 
 ```php
@@ -101,24 +119,6 @@ $client->case->delete($caseId);
 ```
 
 See [dotfile documentation](https://docs.dotfile.com/reference/case-delete-one).
-</details>
-
-<details>
-
-<summary>Get all cases</summary>
-
-```php
-use Dotfile\Model\Case\CaseAllInput;
-
-$caseAllInput = new CaseAllInput();
-$caseAllInput->name = 'I search the case with this name';
-
-$caseList = $client->case->getAll($caseAllInput); // Returns an instance of CaseList
-
-echo count($caseList->data); // Displays the number of items that matched the search
-echo $caseList->data[0]->name; // Displays name of the first case if there is at least one
-```
-See [dotfile documentation](https://docs.dotfile.com/reference/case-get-many)
 </details>
 
 <details>
