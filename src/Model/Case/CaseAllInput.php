@@ -24,14 +24,14 @@ class CaseAllInput
      * being the default.
      */
     public ?string $externalId = null;
-    public ExternalIdOperator $externalIdOperator = ExternalIdOperator::EQ;
+    public ExternalIdOperator $externalIdOperator = ExternalIdOperator::EQUAL;
 
     /**
      * Filter items by the name.{operator} field. You can use the eq, not_eq, like and ilike operators, the eq operator
      * being the default.
      */
     public ?string $name = null;
-    public NameOperator $nameOperator = NameOperator::EQ;
+    public NameOperator $nameOperator = NameOperator::EQUAL;
 
     /**
      * Filter items by the tags.{operator} field. You can use the array_contains, array_not_contains and array_overlap
@@ -51,28 +51,28 @@ class CaseAllInput
      * Comma separated for multiple values (in and not_in).
      */
     public ?string $status = null;
-    public StatusOperator $statusOperator = StatusOperator::EQ;
+    public StatusOperator $statusOperator = StatusOperator::EQUAL;
 
     /**
      * Filter items by the created_at.{operator} field. You can use the eq, not_eq, gt, gte, lt and lte operators, the
      * eq operator being the default.
      */
     public ?\DateTimeImmutable $createdAt = null;
-    public DatetimeOperator $createdAtOperator = DatetimeOperator::EQ;
+    public DatetimeOperator $createdAtOperator = DatetimeOperator::EQUAL;
 
     /**
      * Filter items by the updated_at.{operator} field. You can use the eq, not_eq, gt, gte, lt and lte operators, the
      * eq operator being the default.
      */
     public ?\DateTimeImmutable $updatedAt = null;
-    public DatetimeOperator $updatedAtOperator = DatetimeOperator::EQ;
+    public DatetimeOperator $updatedAtOperator = DatetimeOperator::EQUAL;
 
     /**
      * Filter items by the last_activity_at.{operator} field. You can use the eq, not_eq, gt, gte, lt and lte operators,
      * the eq operator being the default.
      */
     public ?\DateTimeImmutable $lastActivityAt = null;
-    public DatetimeOperator $lastActivityAtOperator = DatetimeOperator::EQ;
+    public DatetimeOperator $lastActivityAtOperator = DatetimeOperator::EQUAL;
 
     /**
      * Use this parameter to sort query results. If not specified, sorted in ascending order with values of field

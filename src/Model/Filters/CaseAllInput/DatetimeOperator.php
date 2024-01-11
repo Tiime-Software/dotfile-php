@@ -6,10 +6,10 @@ namespace Dotfile\Model\Filters\CaseAllInput;
 
 enum DatetimeOperator: string
 {
-    case EQ = 'eq';
-    case NOT_EQ = 'not_eq';
-    case GT = 'gt';
-    case GTE = 'gte';
-    case LT = 'lt';
-    case LTE = 'lte';
+    case EQUAL = 'eq';
+    case NOT_EQUAL = 'not_eq';
+    case GREATER_THAN = 'gt';
+    case GREATER_THAN_OR_EQUAL = 'gte';
+    case LESS_THAN = 'lt';
+    case LESS_THAN_OR_EQUAL = 'lte';
 }
