@@ -26,6 +26,12 @@
             "Dotfile\\": "src/"
         }
     },
+    "authors": [
+        {
+            "name": "Aurélien PILLEVESSE",
+            "email": "aurelienpillevesse@hotmail.fr"
+        }
+    ],
     "autoload-dev": {
         "psr-4": {
             "Dotfile\\Tests\\": "tests/"
